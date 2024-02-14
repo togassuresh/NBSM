@@ -1,0 +1,71 @@
+##Azure -
+Managed identity
+Cred (Access, Secret, tenant id)
+Subscription list
+ 
+ 
+## AWS
+IAM role
+Cred - (Access key and secret key)
+Scope access(own, target or cross account)
+ 
+## GCP
+Cred (Project id, client email id, private key)
+Service account
+Projects
+ 
+We need to check permission.
+ 
+# For every providers
+All VMs
+All disks
+All DBs
+Snapshots list
+Resource Group list
+List Vnet
+List Subnet
+List all network security group
+List restore points
+ 
+ 
+# Redirect logs:
+Count
+Data
+ 
+ 
+ 
+# All list:
+list_vms
+listdisks
+reslist
+snap_list
+rg_list
+zone_list
+nic_list
+list_virtual_networks
+list_all_network_security_group
+list_restore_point_collections
+list_mariadb_servers
+list_mariadb_server_databases
+list_pec
+list_mysql_single_servers
+list_mysql_single_server_databases
+list_mysql_flexible_serve
+list_mysql_flexible_server_databases
+list_sql_servers
+list_sqldbs
+list_restore_points
+list_restorable_dropped_databases
+list_long_term_retention_backups
+list_managed_instances
+list_managed_databases
+list_dropped_managed_databases
+list_managed_databases_ltr
+list_postgresql_single_servers
+list_postgresql_single_server_databases
+list_postgresql_flexible_server
+list_postgresql_flexible_server_databases
+list_cosmosdb_accounts
+list_cosmosdb_nosql_databases
+list_cosmosdb_mongodb_databases
+_list_vms_in_scale_set
