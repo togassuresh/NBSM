@@ -15,3 +15,5 @@ docker exec -it flexsnap-agent python /tmp/first_file.py  --list-disks --list-vm
 docker exec -it flexsnap-agent python /tmp/first_file.py  --list-disks --list-vms --list-snap --cloud aws  
 docker exec -it flexsnap-agent python /tmp/first_file.py  --list-disks --list-vms --list-snap --cloud azure
 docker exec -it flexsnap-agent python /tmp/first_file.py  --list-disks --list-vms --list-snap --cloud azure --list-rg
+docker exec -it flexsnap-agent python /tmp/first_file.py  --list-disks --list-vms --list-snap --cloud azure --list-rg --debug --log-location /tmp
+docker exec -it flexsnap-agent python /tmp/first_file.py  --list-disks --list-vms --list-snap --cloud azure --list-rg --debug
