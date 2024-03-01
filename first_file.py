@@ -28,6 +28,8 @@ from azure.identity import ClientSecretCredential, DefaultAzureCredential
 parser = argparse.ArgumentParser(description='Generic Cloud Service Script')
 parser.add_argument('--cloud', choices=['aws', 'azure', 'gcp', 'azurestack'], help='Specify the cloud service (aws, azure, gcp, azurestack)')
 parser.add_argument("--use-credentials", action="store_true", help="Use credentials")
+parser.add_argument("--debug", action="store_true", help="Enable debug")
+parser.add_argument("--log-location",  metavar='', type=str, help="Debug log location")
 parser.add_argument('--list-vms', action='store_true', help='List all available VMs')
 parser.add_argument('--list-snap', action='store_true', help='List all snapshots ')
 parser.add_argument('--list-disks', action='store_true', help='List all disks')
@@ -55,6 +57,12 @@ if __name__ == "__main__":
             azure_credentials = check_azure_credentials(AZ_CLIENT_ID, AZ_TENANT_ID, AZ_SECRET_ID)
             if azure_credentials:
                 print("success with cred")
+                if args.debug:
+                    print("enable debug")
+                    if args.log_location:
+                        print("Use log location")
+                    else:
+                        print("default log location")
                 if args.list_vms:
                     print("list azure vm")
                 if args.list_disks:
@@ -65,6 +73,12 @@ if __name__ == "__main__":
                     print("List azure rg")
         else:
             print("without cred")
+            if args.debug:
+                print("enable debug")
+                if args.log_location:
+                    print("Use log location")
+                else:
+                    print("default log location")
             if args.list_vms:
                 print("list azure vm")
             if args.list_disks:
@@ -79,6 +93,12 @@ if __name__ == "__main__":
             AWS_ACCESS_KEY = input("Enter Access Key for AWS: ")
             AWS_SECRET_KEY = getpass.getpass("Enter Secret Key for AWS: ")
             print("AWS cred")
+            if args.debug:
+                print("enable debug")
+                if args.log_location:
+                    print("Use log location")
+                else:
+                    print("default log location")
             if args.list_vms:
                 print("list aws vm")
             if args.list_disks:
@@ -89,6 +109,12 @@ if __name__ == "__main__":
                 print("List aws rg")
         else:
             print("Without cred")
+            if args.debug:
+                print("enable debug")
+                if args.log_location:
+                    print("Use log location")
+                else:
+                    print("default log location")
             if args.list_vms:
                 print("list aws vm")
             if args.list_disks:
@@ -101,6 +127,12 @@ if __name__ == "__main__":
         if args.use_credentials:
             GCP_SERVICE_ACCOUNT_KEY_PATH = input("Enter the path to your GCP service account key file: ")
             print("GCP with cred")
+            if args.debug:
+                print("enable debug")
+                if args.log_location:
+                    print("Use log location")
+                else:
+                    print("default log location")
             if args.list_vms:
                 print("list gcp vm")
             if args.list_disks:
@@ -111,6 +143,12 @@ if __name__ == "__main__":
                 print("List gcp rg")
         else:
             print("GCP Without cred")
+            if args.debug:
+                print("enable debug")
+                if args.log_location:
+                    print("Use log location")
+                else:
+                    print("default log location")
             if args.list_vms:
                 print("list gcp vm")
             if args.list_disks:
